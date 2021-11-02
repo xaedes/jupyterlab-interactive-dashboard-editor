@@ -122,7 +122,8 @@ export class DashboardWidget extends Widget {
             container.classList.add(MARKDOWN_OUTPUT_CLASS);
             break;
           case 'code':
-            clone = (cell as CodeCell).cloneOutputArea();
+            clone = (cell as CodeCell).clone().node;
+            //clone = (cell as CodeCell).cloneOutputArea();
             break;
           default:
             throw new Error('Cell is not a code or markdown cell.');
